@@ -1,1 +1,5 @@
 # diablo_tools
+
+升级补丁制作
+
+先用update文件夹下的bianli运行一下，然后直接去update里粘贴fileinstall然后编译update，运行exetoup即可
