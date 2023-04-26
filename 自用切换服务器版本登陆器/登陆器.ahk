@@ -154,3 +154,46 @@ ext(*)
         FileDelete("Crashdump")
     }
 }
+
+#HotIf WinActive("ahk_class Diablo II")  ;ahkv2中的hotif标准语句。
+
+$F1::
+{
+    Send "{f1}"
+    Send "{RButton}"
+}
+$F2::
+{
+    Send "{f2}"
+    Send "{RButton}"
+}
+$F3::
+{
+    Send "{f3}"
+    Send "{RButton}"
+}
+$F4::
+{
+    Send "{f4}"
+    Send "{RButton}"
+}
+$F5::
+{
+    Send "{f5}"
+    Send "{RButton}"
+}
+$F6::
+{
+    Send "{f6}"
+    Send "{RButton}"
+}
+$F7::
+{
+    Send "{f7}"
+    Send "{RButton}"
+}
+$F8::
+{
+    Send "{f8}"
+    Send "{RButton}"
+}
