@@ -153,6 +153,7 @@ ext(*)
         FileDelete("*.log")
         FileDelete("Crashdump")
     }
+    ExitApp
 }
 
 #HotIf WinActive("ahk_class Diablo II")  ;ahkv2中的hotif标准语句。
