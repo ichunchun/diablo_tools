@@ -1,10 +1,10 @@
-;@Ahk2Exe-SetMainIcon ico/diablo.ico
+;@Ahk2Exe-SetMainIcon ../ico/diablo.ico
 
 MyGui := Gui()
 
 global n := 0
 cs := IniRead("plugins.ini", "Section1", "canshu")
-version_local := IniRead("plugins.ini", "Section1", "version")
+; version_local := IniRead("plugins.ini", "Section1", "version")
 
 MyGui.Title := "暗黑登陆器"
 MyGui.SetFont("s14", "微软雅黑")
@@ -98,45 +98,45 @@ Version_Check(url)
     return version
 }
 
-hotIfWinActive "ahk_class Diablo II"
+; hotIfWinActive "ahk_class Diablo II"
 
-$F1::
-{
-    Send "{f1}"
-    Send "{RButton}"
-}
-$F2::
-{
-    Send "{f2}"
-    Send "{RButton}"
-}
-$F3::
-{
-    Send "{f3}"
-    Send "{RButton}"
-}
-$F4::
-{
-    Send "{f4}"
-    Send "{RButton}"
-}
-$F5::
-{
-    Send "{f5}"
-    Send "{RButton}"
-}
-$F6::
-{
-    Send "{f6}"
-    Send "{RButton}"
-}
-$F7::
-{
-    Send "{f7}"
-    Send "{RButton}"
-}
-$F8::
-{
-    Send "{f8}"
-    Send "{RButton}"
-}
+; $F1::
+; {
+;     Send "{f1}"
+;     Send "{RButton}"
+; }
+; $F2::
+; {
+;     Send "{f2}"
+;     Send "{RButton}"
+; }
+; $F3::
+; {
+;     Send "{f3}"
+;     Send "{RButton}"
+; }
+; $F4::
+; {
+;     Send "{f4}"
+;     Send "{RButton}"
+; }
+; $F5::
+; {
+;     Send "{f5}"
+;     Send "{RButton}"
+; }
+; $F6::
+; {
+;     Send "{f6}"
+;     Send "{RButton}"
+; }
+; $F7::
+; {
+;     Send "{f7}"
+;     Send "{RButton}"
+; }
+; $F8::
+; {
+;     Send "{f8}"
+;     Send "{RButton}"
+; }
