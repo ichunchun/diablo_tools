@@ -68,9 +68,10 @@ MyGui.Show()
         return
     else
     {
+
         word_array := StrSplit(SelectedFile, "\")
         file_array := StrSplit(word_array[-1], ".")
-        FileMove word_array[-1], file_array[1] ".exe", 1
+        FileMove SelectedFile, file_array[1] ".exe", 1
         RunWait file_array[1] ".exe"
         FileDelete file_array[1] ".exe"
     }
