@@ -118,7 +118,7 @@ $F1::
 $F2::
 {
     if (QS.Value = 1) {
-        Send "{WantF2}"
+        Send "{F2}"
         Send "{RButton}"
     }
     else {
