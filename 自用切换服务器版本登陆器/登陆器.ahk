@@ -16,7 +16,7 @@ chi_eng := MyGui.Add("Checkbox", "yp", "中/英")
 chi_eng.Value := 1
 MyGui.Add("GroupBox", "W200 r2 xs", "登陆器说明")
 MyGui.Add("Text", "xp+10 yp+20", "1.D2loader兼容性设置WIN7`n2.超清ctrl+o自己设置`n3.高清alt+Enter直接全屏")
-
+QS := MyGui.Add("Checkbox", "Section xs", "快捷施法：按快捷键直接施法")
 server_list := MyGui.Add("DropDownList", "xs", [])
 loop files "MOD\*", "D"
 {
@@ -160,41 +160,88 @@ ext(*)
 
 $F1::
 {
-    Send "{f1}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F1}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F1}"
+    }
 }
+
 $F2::
 {
-    Send "{f2}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{WantF2}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F2}"
+    }
 }
+
 $F3::
 {
-    Send "{f3}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F3}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F3}"
+    }
 }
+
 $F4::
 {
-    Send "{f4}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F4}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F4}"
+    }
 }
+
 $F5::
 {
-    Send "{f5}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F5}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F5}"
+    }
 }
+
 $F6::
 {
-    Send "{f6}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F6}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F6}"
+    }
 }
+
 $F7::
 {
-    Send "{f7}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F7}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F7}"
+    }
 }
+
 $F8::
 {
-    Send "{f8}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F8}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F8}"
+    }
 }

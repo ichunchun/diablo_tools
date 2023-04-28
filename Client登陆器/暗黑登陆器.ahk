@@ -17,6 +17,9 @@ chaoqing := MyGui.Add("radio", "yp", "超清")
 chaoqing.Value := 1
 MyGui.Add("GroupBox", "W200 r5 xs", "登陆器说明")
 MyGui.Add("Text", "xp+10 yp+20", "1.参数自带-direct -w，`n2.-w 必须小写其他带空格`n3.win7不能运行超清`n4.win7高清要打补丁`n5.高清切换分辨率需要退出重进`n6.D2loader兼容性设置WIN7`n7.超清ctrl+o自己设置`n8.高清alt+Enter直接全屏")
+QS := MyGui.Add("Checkbox", "Section xs", "快捷施法：按快捷键直接施法")
+; QS.OnEvent("Click", 快捷施法)
+; MyGui.Add("Checkbox", "yp", "未添加功能")
 MyGui.Add("Text", "Section xs", "自定义参数：")
 canshu := MyGui.Add("Edit", "w105 ys-3", cs)
 MyGui.Add("Text", "Section xs", "一次多开窗口数： ")
@@ -26,7 +29,6 @@ Start := MyGui.Add("Button", "w95 h50 Section xs", "开始游戏")
 Start.OnEvent("Click", 开始)
 Update := MyGui.Add("Button", "w95 h50 yp", "选择更新")
 Update.OnEvent("Click", 更新)
-
 MyGui.OnEvent("Close", ext)
 MyGui.Show()
 
@@ -86,6 +88,7 @@ ext(*)
         FileDelete("Crashdump")
         FileDelete("*.txt")
     }
+    ExitApp
 }
 
 Version_Check(url)
@@ -98,45 +101,93 @@ Version_Check(url)
     return version
 }
 
+
 #HotIf WinActive("ahk_class Diablo II")  ;ahkv2中的hotif标准语句。
 
 $F1::
 {
-    Send "{f1}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F1}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F1}"
+    }
 }
+
 $F2::
 {
-    Send "{f2}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{WantF2}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F2}"
+    }
 }
+
 $F3::
 {
-    Send "{f3}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F3}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F3}"
+    }
 }
+
 $F4::
 {
-    Send "{f4}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F4}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F4}"
+    }
 }
+
 $F5::
 {
-    Send "{f5}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F5}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F5}"
+    }
 }
+
 $F6::
 {
-    Send "{f6}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F6}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F6}"
+    }
 }
+
 $F7::
 {
-    Send "{f7}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F7}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F7}"
+    }
 }
+
 $F8::
 {
-    Send "{f8}"
-    Send "{RButton}"
+    if (QS.Value = 1) {
+        Send "{F8}"
+        Send "{RButton}"
+    }
+    else {
+        Send "{F8}"
+    }
 }
