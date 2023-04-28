@@ -26,7 +26,7 @@ server := IniRead("plugins.ini", "Section1", "choose")
 server_list.Value := server
 server_choose_name := server_list.Text
 
-change := MyGui.Add("Button", "yp w55 h20", "切换")
+change := MyGui.Add("Button", "yp w55 h24", "切换")
 change.OnEvent("Click", 切换)
 MyGui.Add("Text", "Section xs", "自定义参数： ")
 canshu := MyGui.Add("Edit", "w105 ys-3", cs)
