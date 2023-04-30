@@ -5,7 +5,7 @@ MyGui := Gui()
 global n := 0
 cs := IniRead("plugins.ini", "Section1", "canshu")
 ; version_local := IniRead("plugins.ini", "Section1", "version")
-ip:= IniRead("plugins.ini", "Section1", "ip")
+; ip := IniRead("plugins.ini", "Section1", "ip")
 MyGui.Title := "暗黑登陆器"
 MyGui.SetFont("s14", "微软雅黑")
 TT := MyGui.Add("Text", "w200 h60 0x1000 Center", "养老大本营`n 群号：391499959")
@@ -32,7 +32,7 @@ MyGui.Show()
 
 
 开始(*) {
-    RegWrite(ip, "REG_SZ", "HKEY_CURRENT_USER\Software\Blizzard Entertainment\Diablo II", "BNETIP")
+    RegWrite("124.220.5.26", "REG_SZ", "HKEY_CURRENT_USER\Software\Blizzard Entertainment\Diablo II", "BNETIP")
 
     if FileExist("glide3x.dll")
     {
@@ -62,131 +62,131 @@ MyGui.Show()
         IniWrite canshu.Value, "plugins.ini", "Section1", "canshu"
     }
 }
-    更新(*)
+更新(*)
+{
+    SelectedFile := FileSelect(3, , "Open a file", "Text Documents (*.up)")
+    if SelectedFile = ""
+        return
+    else
     {
-        SelectedFile := FileSelect(3, , "Open a file", "Text Documents (*.up)")
-        if SelectedFile = ""
-            return
-        else
-        {
 
-            word_array := StrSplit(SelectedFile, "\")
-            file_array := StrSplit(word_array[-1], ".")
-            FileMove SelectedFile, file_array[1] ".exe", 1
-            RunWait file_array[1] ".exe"
-            FileDelete file_array[1] ".exe"
-        }
-
+        word_array := StrSplit(SelectedFile, "\")
+        file_array := StrSplit(word_array[-1], ".")
+        FileMove SelectedFile, file_array[1] ".exe", 1
+        RunWait file_array[1] ".exe"
+        FileDelete file_array[1] ".exe"
     }
 
-    ext(*)
+}
+
+ext(*)
+{
+    try
     {
-        try
-        {
-            FileDelete("*.bak")
-            FileDelete("Crashdump")
-            FileDelete("*.txt")
-        }
-        ExitApp
+        FileDelete("*.bak")
+        FileDelete("Crashdump")
+        FileDelete("*.txt")
     }
+    ExitApp
+}
 
-    Version_Check(url)
-    {
-        whr := ComObject("WinHttp.WinHttpRequest.5.1")
-        whr.Open("GET", url)
-        whr.Send()
-        whr.WaitForResponse()
-        version := whr.ResponseText
-        return version
+Version_Check(url)
+{
+    whr := ComObject("WinHttp.WinHttpRequest.5.1")
+    whr.Open("GET", url)
+    whr.Send()
+    whr.WaitForResponse()
+    version := whr.ResponseText
+    return version
+}
+
+
+#HotIf WinActive("ahk_class Diablo II")  ;ahkv2中的hotif标准语句。
+
+$F1::
+{
+    if (QS.Value = 1) {
+        Send "{F1}"
+        Send "{RButton}"
     }
-
-
-    #HotIf WinActive("ahk_class Diablo II")  ;ahkv2中的hotif标准语句。
-
-    $F1::
-    {
-        if (QS.Value = 1) {
-            Send "{F1}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F1}"
-        }
+    else {
+        Send "{F1}"
     }
+}
 
-    $F2::
-    {
-        if (QS.Value = 1) {
-            Send "{F2}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F2}"
-        }
+$F2::
+{
+    if (QS.Value = 1) {
+        Send "{F2}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F2}"
+    }
+}
 
-    $F3::
-    {
-        if (QS.Value = 1) {
-            Send "{F3}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F3}"
-        }
+$F3::
+{
+    if (QS.Value = 1) {
+        Send "{F3}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F3}"
+    }
+}
 
-    $F4::
-    {
-        if (QS.Value = 1) {
-            Send "{F4}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F4}"
-        }
+$F4::
+{
+    if (QS.Value = 1) {
+        Send "{F4}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F4}"
+    }
+}
 
-    $F5::
-    {
-        if (QS.Value = 1) {
-            Send "{F5}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F5}"
-        }
+$F5::
+{
+    if (QS.Value = 1) {
+        Send "{F5}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F5}"
+    }
+}
 
-    $F6::
-    {
-        if (QS.Value = 1) {
-            Send "{F6}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F6}"
-        }
+$F6::
+{
+    if (QS.Value = 1) {
+        Send "{F6}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F6}"
+    }
+}
 
-    $F7::
-    {
-        if (QS.Value = 1) {
-            Send "{F7}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F7}"
-        }
+$F7::
+{
+    if (QS.Value = 1) {
+        Send "{F7}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F7}"
+    }
+}
 
-    $F8::
-    {
-        if (QS.Value = 1) {
-            Send "{F8}"
-            Send "{RButton}"
-        }
-        else {
-            Send "{F8}"
-        }
+$F8::
+{
+    if (QS.Value = 1) {
+        Send "{F8}"
+        Send "{RButton}"
     }
+    else {
+        Send "{F8}"
+    }
+}
