@@ -44,7 +44,6 @@ MyGui.Show()
         else if gaoqing.Value = 1
         {
             global n += 1
-            ; RunWait(A_ComSpec " /C ren glide3x.dll glide3x" n ".dll.bak", , 'hide')
             FileMove "glide3x.dll", "glide3x" n ".dll.bak", "1"
             FileCopy "glide3x.dll.d2dx", "glide3x.dll", 1
             loop duokai.Value
@@ -53,9 +52,8 @@ MyGui.Show()
         else if chaoqing.Value = 1
         {
             global n += 1
-            ; RunWait(A_ComSpec " /C ren glide3x.dll glide3x" n ".dll.bak", , 'hide')
             FileMove "glide3x.dll", "glide3x" n ".dll.bak", "1"
-            FileCopy "glide3x.dll.g2dl", "glide3x.dll", 1
+            FileCopy "glide3x.dll.d2gl", "glide3x.dll", 1
             loop duokai.Value
                 Run "game.exe -3dfx -direct" canshu.Value
         }
