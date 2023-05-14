@@ -39,7 +39,7 @@ MyGui.Show()
         if puqing.Value = 1
         {
             loop duokai.Value
-                Run "d2loade.exe " canshu.Value
+                Run "d2loade.exe -direct " canshu.Value
         }
         else if gaoqing.Value = 1
         {
