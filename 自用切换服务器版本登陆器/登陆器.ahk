@@ -161,8 +161,11 @@ ext(*)
 $F1::
 {
     if (QS.Value = 1) {
-        Send "{F1}"
-        Send "{RButton}"
+        Send "{F1} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F1", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F1}"
@@ -172,8 +175,11 @@ $F1::
 $F2::
 {
     if (QS.Value = 1) {
-        Send "{F2}"
-        Send "{RButton}"
+        Send "{F2} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F2", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F2}"
@@ -183,8 +189,11 @@ $F2::
 $F3::
 {
     if (QS.Value = 1) {
-        Send "{F3}"
-        Send "{RButton}"
+        Send "{F3} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F3", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F3}"
@@ -194,8 +203,11 @@ $F3::
 $F4::
 {
     if (QS.Value = 1) {
-        Send "{F4}"
-        Send "{RButton}"
+        Send "{F4} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F4", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F4}"
@@ -205,8 +217,11 @@ $F4::
 $F5::
 {
     if (QS.Value = 1) {
-        Send "{F5}"
-        Send "{RButton}"
+        Send "{F5} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F5", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F5}"
@@ -216,8 +231,11 @@ $F5::
 $F6::
 {
     if (QS.Value = 1) {
-        Send "{F6}"
-        Send "{RButton}"
+        Send "{F6} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F6", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F6}"
@@ -227,8 +245,11 @@ $F6::
 $F7::
 {
     if (QS.Value = 1) {
-        Send "{F7}"
-        Send "{RButton}"
+        Send "{F7} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F7", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F7}"
@@ -238,8 +259,11 @@ $F7::
 $F8::
 {
     if (QS.Value = 1) {
-        Send "{F8}"
-        Send "{RButton}"
+        Send "{F8} " ;发送F1键
+        Send "{RButton}"  ;发送右键
+        while GetKeyState("F8", "P")  ;当F1键状态为按下时循环
+            Send "{RButton}"  ;发送右键
+        return
     }
     else {
         Send "{F8}"
