@@ -19,10 +19,24 @@ MyGui.Add("GroupBox", "W200 r5 xs", "登陆器说明")
 MyGui.Add("Text", "xp+10 yp+20", "1.参数自带-direct -w，`n2.-w 必须小写其他带空格`n3.win7不能运行超清`n4.win7高清要打补丁`n5.高清切换分辨率需要退出重进`n6.D2loader兼容性设置WIN7`n7.超清ctrl+o自己设置`n8.高清alt+Enter直接全屏")
 QS := MyGui.Add("Checkbox", "Section xs", "快捷施法：按快捷键直接施法")
 MyGui.Add("Text", "Section xs", "自定义参数：")
-canshu := MyGui.Add("Edit", "w105 ys-3", cs)
+canshu := MyGui.Add("Edit", "w103 ys-3", cs)
 MyGui.Add("Text", "Section xs", "一次多开窗口数： ")
 duokai := MyGui.Add("Edit", "w74 ys-4", "1")
 duokai.Value := 1
+
+DL := MyGui.Add("Button", "Section xs", "下载存档")
+DL.OnEvent("Click", 下档)
+
+AL := MyGui.Add("DropDownList", "ys w113", [])
+loop files, A_ScriptDir '\Save\D2cs\*.key'
+{
+
+    acc_name := StrSplit(A_LoopFileName, ".")[1]
+    AL.Add([acc_name])
+}
+
+AL.Value := 1
+
 Start := MyGui.Add("Button", "w95 h50 Section xs", "开始游戏")
 Start.OnEvent("Click", 开始)
 Update := MyGui.Add("Button", "w95 h50 yp", "选择更新")
@@ -98,6 +112,13 @@ Version_Check(url)
     return version
 }
 
+下档(*)
+{
+    Download "http://124.220.5.26/backup/Savefile/charsave/" AL.Text ".d2x", A_ScriptDir "\Save\" AL.Text ".d2x"
+    Download "http://124.220.5.26/backup/var/charsave/" AL.Text, A_ScriptDir "\Save\" AL.Text ".d2s"
+    MsgBox AL.Text "存档已下载到本地，存档同步到今早凌晨4点！"
+
+}
 
 #HotIf WinActive("ahk_class Diablo II")  ;ahkv2中的hotif标准语句。
 
@@ -109,7 +130,7 @@ $F1::
         while GetKeyState("F1", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -125,7 +146,7 @@ $F2::
         while GetKeyState("F2", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -141,7 +162,7 @@ $F3::
         while GetKeyState("F3", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -157,7 +178,7 @@ $F4::
         while GetKeyState("F4", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -173,7 +194,7 @@ $F5::
         while GetKeyState("F5", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -189,7 +210,7 @@ $F6::
         while GetKeyState("F6", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -205,7 +226,7 @@ $F7::
         while GetKeyState("F7", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
@@ -221,7 +242,7 @@ $F8::
         while GetKeyState("F8", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(20)
+            Sleep(100)
         }
     }
     else {
