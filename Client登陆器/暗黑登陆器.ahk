@@ -117,9 +117,14 @@ Version_Check(url)
 
 下档(*)
 {
-    Download "http://124.220.5.26/backup/Savefile/charsave/" AL.Text ".d2x", A_ScriptDir "\Save\" AL.Text ".d2x"
-    Download "http://124.220.5.26/backup/var/charsave/" AL.Text, A_ScriptDir "\Save\" AL.Text ".d2s"
-    MsgBox AL.Text "存档已下载到本地，存档同步到今早凌晨4点！"
+    try {
+        Download "http://124.220.5.26/backup/Savefile/charsave/" AL.Text ".d2x", A_ScriptDir "\Save\" AL.Text ".d2x"
+        Download "http://124.220.5.26/backup/var/charsave/" AL.Text, A_ScriptDir "\Save\" AL.Text ".d2s"
+        MsgBox AL.Text "存档已下载到本地，存档同步到今早凌晨4点！"
+    } catch Error as e {
+        MsgBox AL.Text "第一天的新号没办法下载哟！明天就可以了！"
+    }
+
 
 }
 
