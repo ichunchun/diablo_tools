@@ -28,14 +28,17 @@ DL := MyGui.Add("Button", "Section xs", "下载存档")
 DL.OnEvent("Click", 下档)
 
 AL := MyGui.Add("DropDownList", "ys w113", [])
-loop files, A_ScriptDir '\Save\D2cs\*.key'
+try
 {
+    loop files, A_ScriptDir '\Save\D2cs\*.key'
+    {
 
-    acc_name := StrSplit(A_LoopFileName, ".")[1]
-    AL.Add([acc_name])
+        acc_name := StrSplit(A_LoopFileName, ".")[1]
+        AL.Add([acc_name])
+    }
+
+    AL.Value := 1
 }
-
-AL.Value := 1
 
 Start := MyGui.Add("Button", "w95 h50 Section xs", "开始游戏")
 Start.OnEvent("Click", 开始)
@@ -130,7 +133,7 @@ $F1::
         while GetKeyState("F1", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -146,7 +149,7 @@ $F2::
         while GetKeyState("F2", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -162,7 +165,7 @@ $F3::
         while GetKeyState("F3", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -178,7 +181,7 @@ $F4::
         while GetKeyState("F4", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -194,7 +197,7 @@ $F5::
         while GetKeyState("F5", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -210,7 +213,7 @@ $F6::
         while GetKeyState("F6", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -226,7 +229,7 @@ $F7::
         while GetKeyState("F7", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
@@ -242,7 +245,7 @@ $F8::
         while GetKeyState("F8", "P")  ;当F1键状态为按下时循环
         {
             Send "{RButton}"  ;发送右键
-            Sleep(100)
+            Sleep(30)
         }
     }
     else {
