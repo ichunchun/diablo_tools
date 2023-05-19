@@ -33,7 +33,22 @@ canshu := MyGui.Add("Edit", "w105 ys-3", cs)
 MyGui.Add("Text", "Section xs", "一次多开窗口数： ")
 duokai := MyGui.Add("Edit", "w80 ys-4", "1")
 duokai.Value := 1
-Start := MyGui.Add("Button", "w200 h50 Section xs", "开始游戏")
+DL := MyGui.Add("Button", "Section xs h20", "下载存档")
+DL.OnEvent("Click", 下档)
+
+AL := MyGui.Add("DropDownList", "ys w120", [])
+try
+{
+    loop files, A_ScriptDir '\Save\D2cs\*.key'
+    {
+
+        acc_name := StrSplit(A_LoopFileName, ".")[1]
+        AL.Add([acc_name])
+    }
+
+    AL.Value := 1
+}
+Start := MyGui.Add("Button", "w203 h50 Section xs", "开始游戏")
 Start.OnEvent("Click", 开始)
 MyGui.OnEvent("Close", ext)
 
@@ -82,10 +97,15 @@ else
         if (hm.Value = 1)
         {
             IniWrite "plugin/d2hackmap.dll", "plugins.ini", "Section1", "path"
+            IniWrite "BH/pick.dll", "plugins.ini", "Section3", "path"
         }
         else
         {
             IniWrite "BH/BH-chi.dll", "plugins.ini", "Section1", "path"
+            try
+            {
+                IniDelete "plugins.ini", "Section3", "path"
+            }
         }
     }
     else
@@ -97,10 +117,15 @@ else
         if (hm.Value = 1)
         {
             IniWrite "plugin/d2hackmap.dll", "plugins.ini", "Section1", "path"
+            IniWrite "BH/pick.dll", "plugins.ini", "Section3", "path"
         }
         else
         {
             IniWrite "BH/BH-eng.dll", "plugins.ini", "Section1", "path"
+            try
+            {
+                IniDelete "plugins.ini", "Section3", "path"
+            }
         }
     }
     try
@@ -118,7 +143,6 @@ else
         else if gaoqing.Value = 1
         {
             global n += 1
-            ; RunWait(A_ComSpec " /C ren glide3x.dll glide3x" n ".dll.bak", , 'hide')
             FileMove "glide3x.dll", "glide3x" n ".dll.bak", "1"
             FileCopy "glide3x.dll.d2dx", "glide3x.dll", 1
             loop duokai.Value
@@ -127,7 +151,6 @@ else
         else if chaoqing.Value = 1
         {
             global n += 1
-            ; RunWait(A_ComSpec " /C ren glide3x.dll glide3x" n ".dll.bak", , 'hide')
             FileMove "glide3x.dll", "glide3x" n ".dll.bak", "1"
             FileCopy "glide3x.dll.d2gl", "glide3x.dll", 1
             loop duokai.Value
@@ -135,6 +158,19 @@ else
         }
     }
     IniWrite canshu.Value, "plugins.ini", "Section1", "canshu"
+}
+
+下档(*)
+{
+    try {
+        Download "http://124.220.5.26/backup/Savefile/charsave/" AL.Text ".d2x", A_ScriptDir "\Save\" AL.Text ".d2x"
+        Download "http://124.220.5.26/backup/var/charsave/" AL.Text, A_ScriptDir "\Save\" AL.Text ".d2s"
+        MsgBox AL.Text "存档已下载到本地，存档同步到今早凌晨4点！"
+    } catch Error as e {
+        MsgBox AL.Text "第一天的新号没办法下载哟！明天就可以了！"
+    }
+
+
 }
 
 ext(*)
