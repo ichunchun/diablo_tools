@@ -1,7 +1,19 @@
 try
 {
-    loop files "update/D2GS-113C(3)/*.*", ""
-        FileMove "update/D2GS-113C(3)/" A_LoopFileName, "D2GS-113C(3)/" A_LoopFileName, 1
+    ProcessClose "D2CS.exe"
+    ProcessClose "D2DBS.exe"
+    ProcessClose "PvPGN.exe"
+    ProcessClose "D2GS.exe"
+    ProcessClose "D2GSSVC.exe"
+}
+
+if !ProcessExist("D2GS.exe")
+{
+    try
+    {
+        loop files "update/D2GS-113C(3)/*.*", ""
+            FileMove "update/D2GS-113C(3)/" A_LoopFileName, "D2GS-113C(3)/" A_LoopFileName, 1
+    }
 }
 
 Run "PvPGN/P.exe"
