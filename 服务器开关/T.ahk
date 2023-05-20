@@ -4,8 +4,19 @@ try
         FileMove "update/D2GS-113C(3)/" A_LoopFileName, "D2GS-113C(3)/" A_LoopFileName, 1
 }
 
-Run "D2GS-113C(3)/D.exe"
 Run "PvPGN/P.exe"
+Run "D2GS-113C(3)/D.exe"
+
+while true
+    if !ProcessExist("D2GS.exe")
+    {
+        Sleep 1000
+        Run "D2GS-113C(3)/D.exe"
+    }
+    else
+        break
+
+
 TimeString_data := FormatTime(, "LongDate")
 TimeString := FormatTime(, "Time")
 IniWrite "The Restart time is " TimeString, "Record.ini", TimeString_data,
