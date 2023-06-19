@@ -1,0 +1,221 @@
+{
+  "Modules": {
+    "LoadMultiPages": {
+      "LoadPagesTurnOn": true,
+      "active_sharedStash": true,
+      "maxSelfPages": 99,
+      "MarketPriceIsc": 419,
+      "nbPagesPerIndex": 10,
+      "nbPagesPerIndex2": 100,
+      "posXPreviousBtn": 122,
+      "posYPreviousBtn": 63,
+      "posXNextBtn": 157,
+      "posYNextBtn": 63,
+      "posXPreviousIndexBtn": 87,
+      "posYPreviousIndexBtn": 63,
+      "posXNextIndexBtn": 192,
+      "posYNextIndexBtn": 63,
+      "posXstashGoldTextShow": 0,
+      "posYstashGoldTextShow": 0,
+      "posXSharedBtn": 16,
+      "posYSharedBtn": 64
+    },
+    "LifeLimitFix": {
+      "LifeLimitFixTurnOn": false
+    },
+    "DrawDamage": {
+      "DamageHookTurnOn": false
+    },
+    "DynaItem": {
+      "DynaItemTurnOn": false
+    },
+    "DrawOrb": {
+      "DrawOrbTurnOn": false
+    },
+    "HighResolution": {
+      "HighResolutionTurnOn": false,
+      "LeftGoldCoinBtnX": -26,
+      "LeftGoldCoinBtnY": 584,
+      "LeftGoldCoinBtn2X": -70,
+      "LeftGoldCoinBtn2Y": 535,
+      "RightGoldCoinBtnX": 435,
+      "RightGoldCoinBtnY": -60,
+      "InvCloseBtnX": 346,
+      "InvCloseBtnY": -72,
+      "CubeCloseBtnX": 259,
+      "CubeCloseBtnY": -68,
+      "StashCloseBtnX": 259,
+      "StashCloseBtnY": -68,
+      "TransmuteBtnX": 45,
+      "TransmuteBtnY": 91,
+      "NpcBuyBtnX": 103,
+      "NpcBuyBtnY": -69,
+      "NpcSellBtnX": 156,
+      "NpcSellBtnY": -69,
+      "NpcNullBtnX": 209,
+      "NpcNullBtnY": -69,
+      "NpcCloseBtnX": 262,
+      "NpcCloseBtnY": -69,
+      "NpcFixBtnX": 209,
+      "NpcFixBtnY": -69,
+      "NpcFixAllBtnX": 262,
+      "NpcFixAllBtnY": -69,
+      "NpcFirstLabelBtnX": -178,
+      "NpcFirstLabelBtnY": 515,
+      "NpcFirstLabelBtnWidth": 114,
+      "NpcFirstLabelBtnHeight": 40,
+      "SkillTreeFirstX": 320,
+      "SkillTreeFirstY": 368,
+      "SkillLabelText0X": 772,
+      "SkillLabelText0Y": 522,
+      "SkillLabelText1X": 772,
+      "SkillLabelText1Y": 119,
+      "FirstSkillPicX": 380,
+      "FirstSkillPicY": 530,
+      "SkillPicGapX": 130,
+      "SkillPicGapY": 100,
+      "SkillLabelBtnX": 736,
+      "SkillLabelBtnY": -10,
+      "SkillLabelWidth": 85,
+      "SkillLabelHeight": 105,
+      "SkillCloseBtnX": 345,
+      "SkillCloseBtnY": -66,
+      "AllSkillPageNum": 3
+    },
+    "Gamble": {
+      "GambleRefreshTurnOn": true,
+      "MoreGamble": 30,
+      "RefreshBtnDc6Width": 32,
+      "RefreshBtnDc6Hight": 32,
+      "RefreshBtnXBtn": 220,
+      "RefreshBtnYBtn": 62
+    },
+    "MiscPatch": {
+      "MiscPatchTurnOn":false,
+      "DeathDeleteBody":false,
+      "DeathOpensTheDoor":false,
+      "TownBookFileIndex":518,
+      "TownScollFileIndex":529,
+      "MiscSkillsUpPoints": 1,
+      "GoodMaxWarehouse": 2000000000,
+      "GoodMaxPlayer": 1000000,
+      "MagicEquipmentDoubleAffix":false,
+      "RareEquipment6Affix":false,
+      "CharStatsItem":1,
+      "CharStatsLvl":1,
+      "PetReviveMoney":10000,
+      "passive_mag_pierce":358,
+      "passive_dmg_pierce":359,
+      "item_absorbdmg_percent":372,
+      "item_absorbdmg":373,
+      "item_absorbpoi_percent":374,
+      "item_absorbpoi":375,
+      "MonsterMaxRes":100,
+      "RuneWordFix":false,
+      "RwStat":376,
+      "RwQuality":4,
+      "PierceBreak":false,
+      "PierceResAll":false,
+      "OpenAllWap":false,
+      "FixAnyaPortal":true,
+      "FixStateTo1024":false,
+      "IscFix1024TurnOn":false,
+      "MissileCountFix":false,
+      "GamePalyerMonHP":0,
+      "GamePalyerMonDrop":0,
+      "NoDeathAttribute":999
+    },
+    "CharmInventory": {
+      "CharmInventoryFix":false,
+      "BagLeft":13,
+      "BagRight":15,
+      "BagTop": 0,
+      "BagBottem": 15
+    },
+    "Pet": {
+      "PetAllItemTurnOn":false,
+      "PetAllWeapsTurnOn":false,
+      "PetItemLimitIscNo":424
+    },
+    "Pspell": {
+      "PspellPatchTurnOn":true,
+      "Pspell_23_ToRuneStatNo":0,
+      "Pspell_23_ToRuneRandRange":0,
+      "Pspell_23_ToRuneFileStatr":0,
+      "Pspell_24_RuneMaxFileNo":0,
+      "DiyCurrencyStat":0,
+      "ShopRune":false
+    },
+    "MagicBag": {
+      "MagicBagTurnOn":true,
+      "openSbgItemAdd":false,
+      "iBagItemNo":659,
+      "iBagStatNo":358,
+      "sBagItemType":104,
+      "sItemType":105,
+      "sBagItemCountIsc":369,
+      "sBagItemTextX":40,
+      "sBagItemTextY":-105,
+      "sBagItemTextX2":-455,
+      "sBagItemTextY2":-275,
+      "sBagItemTextX3":-470,
+      "sBagItemTextY3":-340
+    },
+    "NewTXT": {
+      "NewTXTTurnOn":false,
+      "MonRedPortalTurnOn":false,
+      "MonSummonTurnOn":false,
+      "RedPortalLevelsMsgTurnOn":false,
+      "UniqueMsgTurnOn":false
+    },
+    "DLL100": {
+      "DLL100TurnOn":false
+    },
+    "ItemLimit":{
+      "ItemLimitTurnOn":false,
+      "AmaItemLimitIscNo":999,
+      "SorItemLimitIscNo":999,
+      "NecItemLimitIscNo":999,
+      "PalItemLimitIscNo":999,
+      "BarItemLimitIscNo":999,
+      "DruItemLimitIscNo":999,
+      "AssItemLimitIscNo":999,
+      "DIYItemLimitIscNo1":999,
+      "DIYItemLimitValueIscNo1":999,
+      "DIYItemLimitIscNo2":999,
+      "DIYItemLimitValueIscNo2":999
+    },
+    "SkillsFix":{
+      "SkillsFixTurnOn":false,
+      "HurricaneFixNo":403
+    },
+    "MonRedPortal":{
+      "MonRedPortalIsc":555
+    },
+    "DropFix": {
+      "DropFixTurnOn":false,
+      "ServiceDT":0,
+      "UserCount":370,
+      "UserCountMastery":371,
+      "DropItemMaxCount":6,
+      "DtStartHour":25,
+      "DtEndHour":25,
+      "ServerExp":1,
+      "ServiceAdd":1,
+      "ItemVariationTotal":100,
+      "ItemVariationForCharm":false,
+      "ItemVariationForJewel":false,
+
+      "ItemVariationForUnique":false,
+      "ItemVariationNoticeForUnique":false,
+      "ItemVariationBasicsForUnique":5,
+      "ItemVariationAdditionalForUnique":373,
+      "ItemVariationForUniqueShowNameISC":372,
+
+      "ItemVariationForRare":false,
+      "ItemVariationBasicsForRare":50,
+      "ItemVariationAdditionalForRare":510
+    }
+  }
+ 
+}

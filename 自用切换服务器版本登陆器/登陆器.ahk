@@ -6,12 +6,11 @@ MyGui.SetFont("s14", "微软雅黑")
 TT := MyGui.Add("Text", "w200 h30 0x1000 Center", "暗黑登陆器")
 TT.Opt("c0xe100ff")
 myGui.SetFont("s9", "Segoe UI")
-puqing := MyGui.Add("radio", "xs+15", "普清")
-gaoqing := MyGui.Add("radio", "yp", "高清")
+gaoqing := MyGui.Add("radio", "xs+40", "高清    ")
 chaoqing := MyGui.Add("radio", "yp", "超清")
 chaoqing.Value := 1
 HM := MyGui.Add("Checkbox", "xs+40", "HM/BH")
-HM.Value := 1
+HM.Value := 0
 chi_eng := MyGui.Add("Checkbox", "yp", "中/英")
 chi_eng.Value := 1
 MyGui.Add("GroupBox", "W200 r2 xs", "登陆器说明")
@@ -30,30 +29,11 @@ change := MyGui.Add("Button", "yp w55 h24", "切换")
 change.OnEvent("Click", 切换)
 MyGui.Add("Text", "Section xs", "自定义参数： ")
 canshu := MyGui.Add("Edit", "w105 ys-3", cs)
-MyGui.Add("Text", "Section xs", "一次多开窗口数： ")
-duokai := MyGui.Add("Edit", "w80 ys-4", "1")
-duokai.Value := 1
-DL := MyGui.Add("Button", "Section xs h20", "下载存档")
-DL.OnEvent("Click", 下档)
-
-AL := MyGui.Add("DropDownList", "ys w120", [])
-try
-{
-    loop files, A_ScriptDir '\Save\D2cs\*.key'
-    {
-
-        acc_name := StrSplit(A_LoopFileName, ".")[1]
-        AL.Add([acc_name])
-    }
-
-    AL.Value := 1
-}
 Start := MyGui.Add("Button", "w203 h50 Section xs", "开始游戏")
 Start.OnEvent("Click", 开始)
 MyGui.OnEvent("Close", ext)
 
 MyGui.Show()
-
 
 if FileExist(A_Desktop "\暗黑登陆器.lnk")
 {
@@ -135,43 +115,24 @@ else
 
     if FileExist("glide3x.dll")
     {
-        if puqing.Value = 1
-        {
-            loop duokai.Value
-                Run "d2loade.exe " canshu.Value
-        }
-        else if gaoqing.Value = 1
+        if gaoqing.Value = 1
         {
             global n += 1
             FileMove "glide3x.dll", "glide3x" n ".dll.bak", "1"
             FileCopy "glide3x.dll.d2dx", "glide3x.dll", 1
-            loop duokai.Value
-                Run "game.exe -3dfx -w -direct " canshu.Value
+            Run "game.exe -3dfx -w -direct " canshu.Value
         }
         else if chaoqing.Value = 1
         {
             global n += 1
             FileMove "glide3x.dll", "glide3x" n ".dll.bak", "1"
             FileCopy "glide3x.dll.d2gl", "glide3x.dll", 1
-            loop duokai.Value
-                Run "game.exe -3dfx -direct" canshu.Value
+            Run "game.exe -3dfx -direct" canshu.Value
         }
     }
     IniWrite canshu.Value, "plugins.ini", "Section1", "canshu"
 }
 
-下档(*)
-{
-    try {
-        Download "http://124.220.5.26/backup/Savefile/charsave/" AL.Text ".d2x", A_ScriptDir "\Save\" AL.Text ".d2x"
-        Download "http://124.220.5.26/backup/var/charsave/" AL.Text, A_ScriptDir "\Save\" AL.Text ".d2s"
-        MsgBox AL.Text "存档已下载到本地，存档同步到今早凌晨4点！"
-    } catch Error as e {
-        MsgBox AL.Text "第一天的新号没办法下载哟！明天就可以了！"
-    }
-
-
-}
 
 ext(*)
 {
